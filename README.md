@@ -12,6 +12,7 @@ ____
 
 ## System Design 
 - Main Objectives
+  ( => Originaly we said, that our main objective was connectivity : However please check in code (give it to gpt) to ask, what 'objective' we can guarantee (e.g. good battery life or precise measurements etc..) Just find something and report it)
 - Design Decisions
     - Battery 
     - Networking
