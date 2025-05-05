@@ -4,9 +4,8 @@ A projct as part of the 'Embedded Sensing Systems' course at the university of S
 ____
 ### Questions to answer before Presentation
 
-[ ] What is the timeframe of the Presentation? 
-[ ] Are we required to bring Slides?
-[ ] What can we do, to make the presentation more exicting ? 
+[x] What is the timeframe of the Presentation?: 15min => 5min each!
+[x] Are we required to bring Slides?: Yes we are => Focus Design and Evaluation and not on Implementation in the Presentation!
 
 ## Overview
 
