@@ -98,6 +98,33 @@
                 });
         }
         
+        function testNotification() {
+            // Show a loading indicator
+            const testBtn = document.querySelector('.test-btn');
+            const originalText = testBtn.innerText;
+            testBtn.innerText = 'Sending...';
+            testBtn.disabled = true;
+            
+            // Send request to test notification endpoint
+            fetch('/api/test-notification')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert('Test notification sent! Check your phone.');
+                    } else {
+                        alert('Error sending notification: ' + data.message);
+                    }
+                })
+                .catch(error => {
+                    alert('Error: ' + error.message);
+                })
+                .finally(() => {
+                    // Restore button state
+                    testBtn.innerText = originalText;
+                    testBtn.disabled = false;
+                });
+        }
+        
         // Update status every 5 seconds
         setInterval(updateStatus, 5000);
         
@@ -115,12 +142,32 @@
         <div class='mail-count'>Total Mail Received: <span id='mailCount'>0</span></div>
         <div class='btn-container'>
             <button class='btn refresh-btn' onclick='updateStatus()'>Refresh</button>
+            <button class='btn test-btn' onclick='testNotification()' style='background-color: #28a745; color: white;'>Test Notification</button>
         </div>
         <div class='distance-info'>Current distance: <span id='distance'>0</span> mm</div>
         <div class='distance-info'>Baseline distance: <span id='baseline'>0</span> mm</div>
         <div class='distance-info'>Difference: <span id='difference' class='difference'>0</span> mm</div>
         <div class='distance-info'>Last distance change: <span id='lastChange'>Never</span></div>
         <div class='last-update'>Last update: <span id='lastUpdate'>Never</span></div>
+        
+        <div style='margin-top: 30px; padding: 15px; background-color: #f8f9fa; border-radius: 5px; text-align: left;'>
+            <h3 style='color: #333; margin-top: 0;'>Notification Setup</h3>
+            <p>To receive notifications on your phone:</p>
+            <ol style='padding-left: 20px;'>
+                <li>Download the <a href='https://push.techulus.com/' target='_blank'>Techulus Push</a> app from the App Store or Google Play Store</li>
+                <li>Sign in with your email and get your API key from the app</li>
+                <li>Update the TECHULUS_API_KEY in the raspberry_pi_mqtt_server.py file</li>
+                <li>Restart the server</li>
+                <li>Click the "Test Notification" button above to verify it's working</li>
+            </ol>
+            <p>If you're not receiving notifications:</p>
+            <ul style='padding-left: 20px;'>
+                <li>Check that your API key is correct</li>
+                <li>Ensure the Techulus Push app is installed and running on your phone</li>
+                <li>Check that your phone has an internet connection</li>
+                <li>Look at the server logs for any error messages</li>
+            </ul>
+        </div>
     </div>
 </body>
 </html>

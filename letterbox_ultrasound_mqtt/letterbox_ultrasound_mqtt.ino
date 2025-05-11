@@ -2,11 +2,11 @@
 #include <PubSubClient.h>  // MQTT client library
 
 // WiFi Connection settings
-const char* ssid = "Letterbox";         // Replace with your WiFi network name
-const char* password = "letterbox1234";  // Replace with your WiFi password
+const char* ssid = "Self_Destruction_Device";         // Replace with your WiFi network name
+const char* password = "123456789";  // Replace with your WiFi password
 
 // MQTT Settings
-const char* mqtt_server = "10.42.0.178";  // Replace with your Raspberry Pi's IP address
+const char* mqtt_server = "172.20.10.6";  // Replace with your Raspberry Pi's IP address
 const int mqtt_port = 1883;                 // Default MQTT port
 const char* mqtt_client_id = "letterbox_sensor";
 const char* mqtt_topic = "letterbox/data";

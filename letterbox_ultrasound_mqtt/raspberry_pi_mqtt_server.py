@@ -17,7 +17,7 @@ templates_dir = os.path.join(script_dir, 'templates')
 app = Flask(__name__, template_folder=templates_dir)
 
 # Configuration
-TECHULUS_API_KEY = "YOUR_API_KEY"  # Replace with your actual Techulus Push API key
+TECHULUS_API_KEY = "09339a89-5f96-4fee-a1de-acdbd8e54ca"  # Replace with your actual Techulus Push API key 8
 NOTIFICATION_URL = "https://push.techulus.com/api/v1/notify"
 DATA_FILE = os.path.join(script_dir, "letterbox_data.json")
 
@@ -96,6 +96,7 @@ def on_message(client, userdata, msg, properties=None):
         elif msg.topic == MQTT_NOTIFICATION_TOPIC:
             # Process notification message
             notification_message = payload.get("message", "Letterbox status has changed!")
+            # Send notification without host URL since we're outside of a request context
             send_notification(notification_message)
             
     except json.JSONDecodeError as e:
@@ -120,7 +121,17 @@ def index():
 def get_data():
     return jsonify(letterbox_data)
 
-def send_notification(message):
+@app.route('/api/test-notification')
+def test_notification():
+    """Route to test the notification system"""
+    try:
+        # Send a test notification with the current host URL
+        send_notification("This is a test notification from your Smart Letterbox", request.host)
+        return jsonify({"success": True, "message": "Test notification sent"})
+    except Exception as e:
+        return jsonify({"success": False, "message": f"Error sending notification: {str(e)}"})
+
+def send_notification(message, host_url=None):
     try:
         # Prepare notification payload
         payload = {
@@ -128,9 +139,12 @@ def send_notification(message):
             "body": message,
             "sound": "default",
             "channel": "letterbox",
-            "link": f"http://{request.host}/",  # Link back to the letterbox dashboard
             "timeSensitive": True
         }
+        
+        # Add link if host_url is provided
+        if host_url:
+            payload["link"] = f"http://{host_url}/"
         
         # Set headers
         headers = {
@@ -139,6 +153,11 @@ def send_notification(message):
             "Accept": "*/*"
         }
         
+        # Print debug info
+        print(f"Sending notification with payload: {payload}")
+        print(f"Using API key: {TECHULUS_API_KEY}")
+        print(f"To URL: {NOTIFICATION_URL}")
+        
         # Send notification request
         response = requests.post(
             NOTIFICATION_URL,
@@ -146,12 +165,24 @@ def send_notification(message):
             json=payload
         )
         
+        # Print detailed response
         print(f"Notification sent: {message}")
-        print(f"Response: {response.status_code} - {response.text}")
+        print(f"Response status: {response.status_code}")
+        print(f"Response headers: {response.headers}")
+        print(f"Response body: {response.text}")
         
-        return True
+        # Check if the response indicates success
+        if response.status_code >= 200 and response.status_code < 300:
+            print("Notification sent successfully!")
+            return True
+        else:
+            print(f"Notification failed with status code: {response.status_code}")
+            return False
     except Exception as e:
         print(f"Error sending notification: {e}")
+        print(f"Error type: {type(e).__name__}")
+        import traceback
+        print(f"Traceback: {traceback.format_exc()}")
         return False
 
 def start_mqtt_client():
@@ -281,6 +312,33 @@ if __name__ == '__main__':
                 });
         }
         
+        function testNotification() {
+            // Show a loading indicator
+            const testBtn = document.querySelector('.test-btn');
+            const originalText = testBtn.innerText;
+            testBtn.innerText = 'Sending...';
+            testBtn.disabled = true;
+            
+            // Send request to test notification endpoint
+            fetch('/api/test-notification')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert('Test notification sent! Check your phone.');
+                    } else {
+                        alert('Error sending notification: ' + data.message);
+                    }
+                })
+                .catch(error => {
+                    alert('Error: ' + error.message);
+                })
+                .finally(() => {
+                    // Restore button state
+                    testBtn.innerText = originalText;
+                    testBtn.disabled = false;
+                });
+        }
+        
         // Update status every 5 seconds
         setInterval(updateStatus, 5000);
         
@@ -298,12 +356,32 @@ if __name__ == '__main__':
         <div class='mail-count'>Total Mail Received: <span id='mailCount'>0</span></div>
         <div class='btn-container'>
             <button class='btn refresh-btn' onclick='updateStatus()'>Refresh</button>
+            <button class='btn test-btn' onclick='testNotification()' style='background-color: #28a745; color: white;'>Test Notification</button>
         </div>
         <div class='distance-info'>Current distance: <span id='distance'>0</span> mm</div>
         <div class='distance-info'>Baseline distance: <span id='baseline'>0</span> mm</div>
         <div class='distance-info'>Difference: <span id='difference' class='difference'>0</span> mm</div>
         <div class='distance-info'>Last distance change: <span id='lastChange'>Never</span></div>
         <div class='last-update'>Last update: <span id='lastUpdate'>Never</span></div>
+        
+        <div style='margin-top: 30px; padding: 15px; background-color: #f8f9fa; border-radius: 5px; text-align: left;'>
+            <h3 style='color: #333; margin-top: 0;'>Notification Setup</h3>
+            <p>To receive notifications on your phone:</p>
+            <ol style='padding-left: 20px;'>
+                <li>Download the <a href='https://push.techulus.com/' target='_blank'>Techulus Push</a> app from the App Store or Google Play Store</li>
+                <li>Sign in with your email and get your API key from the app</li>
+                <li>Update the TECHULUS_API_KEY in the raspberry_pi_mqtt_server.py file</li>
+                <li>Restart the server</li>
+                <li>Click the "Test Notification" button above to verify it's working</li>
+            </ol>
+            <p>If you're not receiving notifications:</p>
+            <ul style='padding-left: 20px;'>
+                <li>Check that your API key is correct</li>
+                <li>Ensure the Techulus Push app is installed and running on your phone</li>
+                <li>Check that your phone has an internet connection</li>
+                <li>Look at the server logs for any error messages</li>
+            </ul>
+        </div>
     </div>
 </body>
 </html>""")
