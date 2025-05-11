@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Smart Letterbox</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        .status {
+            font-size: 24px;
+            margin: 20px 0;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .mail-present {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .no-mail {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .info {
+            margin: 15px 0;
+            font-size: 16px;
+        }
+        .mail-count {
+            background-color: #e2f0fd;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 15px 0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .btn {
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .refresh-btn {
+            background-color: #007bff;
+            color: white;
+        }
+        .refresh-btn:hover {
+            background-color: #0069d9;
+        }
+        .distance-info {
+            font-size: 14px;
+            color: #666;
+            margin-top: 10px;
+        }
+        .difference {
+            font-weight: bold;
+        }
+        .last-update {
+            font-size: 12px;
+            color: #888;
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        function updateStatus() {
+            fetch('/api/data')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('status').className = data.mailPresent ? 'status mail-present' : 'status no-mail';
+                    document.getElementById('status').innerText = data.mailPresent ? 'Mail is present!' : 'No mail';
+                    document.getElementById('lastTime').innerText = data.lastMailTime;
+                    document.getElementById('mailCount').innerText = data.mailCount;
+                    document.getElementById('distance').innerText = data.distance;
+                    document.getElementById('baseline').innerText = data.baseline;
+                    document.getElementById('difference').innerText = data.baseline - data.distance;
+                    document.getElementById('lastChange').innerText = data.lastChange;
+                    document.getElementById('lastUpdate').innerText = data.lastUpdateTime;
+                });
+        }
+        
+        // Update status every 5 seconds
+        setInterval(updateStatus, 5000);
+        
+        // Initial update
+        document.addEventListener('DOMContentLoaded', updateStatus);
+    </script>
+</head>
+<body>
+    <div class='container'>
+        <h1>Smart Letterbox</h1>
+        <div id='status' class='status no-mail'>
+            No mail
+        </div>
+        <div class='info'>Last mail received at: <span id='lastTime'>Never</span></div>
+        <div class='mail-count'>Total Mail Received: <span id='mailCount'>0</span></div>
+        <div class='btn-container'>
+            <button class='btn refresh-btn' onclick='updateStatus()'>Refresh</button>
+        </div>
+        <div class='distance-info'>Current distance: <span id='distance'>0</span> mm</div>
+        <div class='distance-info'>Baseline distance: <span id='baseline'>0</span> mm</div>
+        <div class='distance-info'>Difference: <span id='difference' class='difference'>0</span> mm</div>
+        <div class='distance-info'>Last distance change: <span id='lastChange'>Never</span></div>
+        <div class='last-update'>Last update: <span id='lastUpdate'>Never</span></div>
+    </div>
+</body>
+</html>
