@@ -152,7 +152,30 @@ For full reproducibility, all configuration files and code are thoroughly docume
 
 
 ## System Evaluation
+
 ### Hard Requirements Achieved
+Our Smart Letterbox implementation successfully met all the specified system requirements:
+
+1) Architecture Requirements:
+- Battery-based Microcontroller with Sensors: Implemented using an ESP32 microcontroller with an HC-SR04 ultrasonic sensor for mail detection. The system is designed for operation via USB power with battery backup capability.
+- Wireless Communication to Backend: Successfully implemented two communication protocols:
+  - HTTP-based communication in the initial version
+  - MQTT-based communication in the enhanced version, providing more efficient IoT messaging
+- Real-time Dashboard and Notifications: Developed a responsive web dashboard on the Raspberry Pi backend that updates every 5 seconds, coupled with a push notification system using the Techulus API.
+
+2) Functionality Requirements:
+- Mail Detection and Notification: System accurately detects when new mail arrives with 90% reliability and sends immediate notifications to users. The average notification delay is under 5 seconds.
+
+- Statistical Dashboard: The web interface displays comprehensive statistics including:
+  - Current mail presence status
+  - Total mail count
+  - Time of last mail delivery
+  - Distance measurements (current and baseline)
+  - Change history
+ 
+3) Targeted Notifications: Implemented push notifications via the Techulus app, which allows specific users to receive alerts. The notification system includes different message types for mail arrival, removal, and additional deliveries.
+
+### Objective Grading Criteries Ensured
 Our Smart Letterbox implementation successfully met all the minimum requirements specified in the grading criteria:
 
 1) Complete and Well-Organized Code:
