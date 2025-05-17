@@ -237,6 +237,11 @@ Our modular and extensible design provides multiple pathways for future enhancem
 - Predictive algorithms for anticipated delivery times
 - Mail volume tracking over time with visualization
 
+3) LoRa Network Integration:
+- Implementing LoRa (Long Range) network connectivity to replace or complement WiFi for communication in areas with poor or no WiFi coverage.
+- LoRa offers low-power, long-range communication, ideal for IoT devices like the Smart Letterbox.
+- This integration would extend the system's range, enabling smart mailboxes in remote or rural areas where WiFi might not be readily available.
+
 4) Power Optimizations:
 - Implementation of deep sleep modes or duty-cycles for extended battery life
 - Solar power integration for self-sustaining operation
