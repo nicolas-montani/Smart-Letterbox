@@ -38,6 +38,27 @@ nano app.py
 
 Copy and paste the code from the "Raspberry Pi Server - Flask Application" file into this file and save (Ctrl+O, Enter, Ctrl+X).
 
+#### Running on Port 80
+
+If you're running the app on port 80 (the default HTTP port), you have two options:
+
+
+
+**Use authbind (secure and convenient)**
+Authbind allows non-root users to bind to privileged ports:
+
+1. Install authbind:
+```bash
+sudo apt install authbind
+```
+
+2. Configure authbind for port 80:
+```bash
+sudo touch /etc/authbind/byport/80
+sudo chmod 500 /etc/authbind/byport/80
+sudo chown wasabi:wasabi /etc/authbind/byport/80  # Replace 'pi' with your username if different
+```
+
 ### 4. Make the Application Start on Boot
 
 Create a systemd service file:
@@ -46,29 +67,28 @@ Create a systemd service file:
 sudo nano /etc/systemd/system/letterbox.service
 ```
 
-Paste the following content:
+Paste the following content (make sure to update the username if needed):
 
 ```
 [Unit]
-Description=Letterbox Monitoring System
-After=network.target
+Description=Smart Letterbox Flask Server
+After=network.target mosquitto.service
+Wants=mosquitto.service
 
 [Service]
-User=pi
-WorkingDirectory=/home/pi/letterbox_monitor
-ExecStart=/usr/bin/python3 app.py
+User=wasabi
+WorkingDirectory=/home/wasabi/smart-letterbox/
+ExecStart=/usr/bin/authbind --deep /usr/bin/python3 /home/wasabi/smart-letterbox/app.py
 Restart=always
-RestartSec=5
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=letterbox
 
 [Install]
 WantedBy=multi-user.target
-```
 
-Enable and start the service:
 
-```bash
-sudo systemctl enable letterbox.service
-sudo systemctl start letterbox.service
 ```
 
 ### 5. Configure Techulus Push API Key
@@ -143,6 +163,18 @@ Connect the HC-SR04 ultrasonic sensor to your ESP32:
 - Check if the service is running: `sudo systemctl status letterbox.service`
 - Check logs for errors: `journalctl -u letterbox.service`
 - Ensure port 80 is not being used by another service
+
+### Permission Issues
+- **User not found error (status=217/USER)**: This occurs when the specified user in the service file doesn't exist. Run `whoami` to check your username and update the service file.
+- **Permission denied errors**: Make sure your user has ownership and execute permissions for the project directory and files:
+  ```bash
+  sudo chown -R YOUR_USERNAME:YOUR_USERNAME /path/to/letterbox_monitor
+  chmod -R 755 /path/to/letterbox_monitor
+  ```
+- **Port binding issues**: Non-root users cannot bind to ports below 1024. Either:
+  - Run the service as root (less secure)
+  - Modify the app to use a higher port and set up port forwarding as described above
+  - Use a tool like authbind to allow non-root users to bind to privileged ports
 
 ### No Push Notifications
 - Verify your Techulus API key is correct

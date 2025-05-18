@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Letterbox Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Smart Letterbox Dashboard</h1>
+            <p>Real-time monitoring of your letterbox</p>
+        </header>
+
+        <div class="dashboard">
+            <div class="card">
+                <h3 class="card-title">Distance Measurements</h3>
+                {% if data.distances is defined %}
+                <div class="card-value" style="font-size: 1.5rem; margin-bottom: 5px;">
+                    <span style="color: #0000ff;">Sensor 1: <span id="distance-value-1">{{ data.distances[0] * 10 }} mm</span></span>
+                </div>
+                <div class="card-value" style="font-size: 1.5rem; margin-bottom: 5px;">
+                    <span style="color: #2980b9;">Sensor 2: <span id="distance-value-2">{{ data.distances[1] * 10 }} mm</span></span>
+                </div>
+                <div class="card-value" style="font-size: 1.5rem; margin-bottom: 5px;">
+                    <span style="color: #3498db;">Sensor 3: <span id="distance-value-3">{{ data.distances[2] * 10 }} mm</span></span>
+                </div>
+                {% else %}
+                <div id="distance-value" class="card-value" style="color: #0000ff;">{{ data.distance * 10 }} mm</div>
+                {% endif %}
+                <div class="card-subtitle">Measurements from ultrasonic sensor</div>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">Battery Status</h3>
+                <div id="battery-value" class="card-value">{{ data.batteryPercentage }}%</div>
+                <div class="battery-indicator">
+                    <div id="battery-level" class="battery-level" style="width: {{ data.batteryPercentage }}%;"></div>
+                </div>
+                <div class="card-subtitle">Power source: <span id="power-source">{{ data.powerSource }}</span></div>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">Battery Consumption</h3>
+                <div id="battery-used" class="card-value">{{ data.estimatedUsedCapacity }} mAh</div>
+                <div class="card-subtitle">Estimated remaining time: <span id="remaining-time">{{ data.estimatedRemainingTime }}</span> hours</div>
+                <div class="card-subtitle">Run time: <span id="run-time">{{ data.runTimeHours }}</span> hours</div>
+            </div>
+        </div>
+
+        <div class="graph-container">
+            <h3 class="card-title">Distance Over Time</h3>
+            <div class="timeframe-selector">
+                <button class="btn btn-timeframe active" data-timeframe="1h">1h</button>
+                <button class="btn btn-timeframe" data-timeframe="6h">6h</button>
+                <button class="btn btn-timeframe" data-timeframe="1d">1d</button>
+                <button class="btn btn-timeframe" data-timeframe="1w">1w</button>
+                <button class="btn btn-timeframe" data-timeframe="1m">1m</button>
+                <button class="btn btn-timeframe" data-timeframe="all">All</button>
+            </div>
+            <canvas id="distanceChart"></canvas>
+        </div>
+
+        <div class="graph-container">
+            <h3 class="card-title">Battery Status Over Time</h3>
+            <canvas id="batteryChart"></canvas>
+        </div>
+
+        <div class="btn-container">
+            <button class="btn" onclick="refreshData()">Refresh Data</button>
+            <button class="btn btn-danger" onclick="clearHistory()">Clear History</button>
+        </div>
+
+        <div class="last-update">
+            Last update: <span id="last-update">{{ data.lastUpdateTime }}</span>
+        </div>
+
+        <div class="footer">
+            <p>Smart Letterbox Monitoring System v2.0</p>
+        </div>
+    </div>
+
+    <script>
+        // Chart objects
+        let distanceChart;
+        let batteryChart;
+        
+        // Current selected timeframe
+        let currentTimeframe = '1h';
+
+        // Initialize charts
+        function initCharts() {
+            // Distance chart
+            const distanceCtx = document.getElementById('distanceChart').getContext('2d');
+            distanceChart = new Chart(distanceCtx, {
+                type: 'line',
+                data: {
+                    labels: [],
+                    datasets: [{
+                        label: 'Distance (mm)',
+                        data: [],
+                        borderColor: '#0000ff',
+                        backgroundColor: 'rgba(0, 0, 255, 0.1)',
+                        borderWidth: 2,
+                        fill: true,
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Distance Measurements'
+                        },
+                        tooltip: {
+                            mode: 'index',
+                            intersect: false,
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Distance (mm)'
+                            }
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Time'
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Battery chart
+            const batteryCtx = document.getElementById('batteryChart').getContext('2d');
+            batteryChart = new Chart(batteryCtx, {
+                type: 'line',
+                data: {
+                    labels: [],
+                    datasets: [{
+                        label: 'Battery Percentage (%)',
+                        data: [],
+                        borderColor: '#2ecc71',
+                        backgroundColor: 'rgba(46, 204, 113, 0.1)',
+                        borderWidth: 2,
+                        fill: true,
+                        tension: 0.4,
+                        yAxisID: 'y'
+                    }, {
+                        label: 'Used Capacity (mAh)',
+                        data: [],
+                        borderColor: '#e74c3c',
+                        backgroundColor: 'rgba(231, 76, 60, 0.1)',
+                        borderWidth: 2,
+                        fill: true,
+                        tension: 0.4,
+                        yAxisID: 'y1'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Battery Status'
+                        },
+                        tooltip: {
+                            mode: 'index',
+                            intersect: false,
+                        }
+                    },
+                    scales: {
+                        y: {
+                            type: 'linear',
+                            display: true,
+                            position: 'left',
+                            beginAtZero: true,
+                            max: 100,
+                            title: {
+                                display: true,
+                                text: 'Battery Percentage (%)'
+                            }
+                        },
+                        y1: {
+                            type: 'linear',
+                            display: true,
+                            position: 'right',
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Used Capacity (mAh)'
+                            },
+                            grid: {
+                                drawOnChartArea: false
+                            }
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Time'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Update charts with history data
+        function updateCharts() {
+            fetch(`/api/history?timeframe=${currentTimeframe}`)
+                .then(response => response.json())
+                .then(data => {
+                    // Extract data for charts
+                    const times = data.map(entry => entry.time);
+                    
+                    // For backward compatibility, check if we have the new format or old format
+                    let avgDistances = [];
+                    if (data.length > 0 && data[0].avg_distance !== undefined) {
+                        // New format with avg_distance
+                        avgDistances = data.map(entry => entry.avg_distance * 10); // Convert to mm
+                    } else if (data.length > 0 && data[0].distance !== undefined) {
+                        // Old format with single distance
+                        avgDistances = data.map(entry => entry.distance * 10); // Convert to mm
+                    }
+                    
+                    const batteryPercentages = data.map(entry => entry.batteryPercentage);
+                    const usedCapacities = data.map(entry => entry.estimatedUsedCapacity);
+
+                    // Update distance chart
+                    distanceChart.data.labels = times;
+                    distanceChart.data.datasets[0].data = avgDistances;
+                    
+                    // Highlight points where distance is more than 50mm
+                    distanceChart.data.datasets[0].pointBackgroundColor = avgDistances.map(d => d > 50 ? '#e74c3c' : '#0000ff');
+                    distanceChart.data.datasets[0].pointBorderColor = avgDistances.map(d => d > 50 ? '#e74c3c' : '#0000ff');
+                    
+                    // Update chart title with timeframe
+                    let timeframeText = currentTimeframe;
+                    if (currentTimeframe === '1h') timeframeText = 'Last Hour';
+                    else if (currentTimeframe === '6h') timeframeText = 'Last 6 Hours';
+                    else if (currentTimeframe === '1d') timeframeText = 'Last 24 Hours';
+                    else if (currentTimeframe === '1w') timeframeText = 'Last Week';
+                    else if (currentTimeframe === '1m') timeframeText = 'Last Month';
+                    else if (currentTimeframe === 'all') timeframeText = 'All Time';
+                    
+                    distanceChart.options.plugins.title.text = `Distance Measurements (${timeframeText})`;
+                    distanceChart.update();
+
+                    // Update battery chart
+                    batteryChart.data.labels = times;
+                    batteryChart.data.datasets[0].data = batteryPercentages;
+                    batteryChart.data.datasets[1].data = usedCapacities;
+                    batteryChart.options.plugins.title.text = `Battery Status (${timeframeText})`;
+                    batteryChart.update();
+                });
+        }
+
+        // Update dashboard with current data
+        function updateDashboard() {
+            fetch('/api/data')
+                .then(response => response.json())
+                .then(data => {
+                    // Update distances for all three measurements
+                    if (data.distances && Array.isArray(data.distances)) {
+                        // New format with distances array
+                        const distanceValue1 = document.getElementById('distance-value-1');
+                        const distanceValue2 = document.getElementById('distance-value-2');
+                        const distanceValue3 = document.getElementById('distance-value-3');
+                        
+                        if (distanceValue1 && distanceValue2 && distanceValue3) {
+                            distanceValue1.textContent = `${data.distances[0] * 10} mm`;
+                            distanceValue2.textContent = `${data.distances[1] * 10} mm`;
+                            distanceValue3.textContent = `${data.distances[2] * 10} mm`;
+                            
+                            // Highlight in red if any distance is more than 50mm
+                            if (data.distances[0] > 5 || data.distances[1] > 5 || data.distances[2] > 5) {
+                                distanceValue1.parentElement.classList.add('warning');
+                                distanceValue2.parentElement.classList.add('warning');
+                                distanceValue3.parentElement.classList.add('warning');
+                            } else {
+                                distanceValue1.parentElement.classList.remove('warning');
+                                distanceValue2.parentElement.classList.remove('warning');
+                                distanceValue3.parentElement.classList.remove('warning');
+                            }
+                        }
+                    } else if (data.distance !== undefined) {
+                        // Old format with single distance
+                        const distanceValue = document.getElementById('distance-value');
+                        if (distanceValue) {
+                            distanceValue.textContent = `${data.distance * 10} mm`;
+                            
+                            // Highlight in red if distance is more than 50mm
+                            if (data.distance > 5) {
+                                distanceValue.classList.add('warning');
+                            } else {
+                                distanceValue.classList.remove('warning');
+                            }
+                        }
+                    }
+
+                    // Update battery status
+                    if (data.batteryPercentage !== undefined) {
+                        document.getElementById('battery-value').textContent = `${data.batteryPercentage}%`;
+                        
+                        const batteryLevel = document.getElementById('battery-level');
+                        batteryLevel.style.width = `${data.batteryPercentage}%`;
+                        
+                        // Change battery color based on percentage
+                        if (data.batteryPercentage < 20) {
+                            batteryLevel.classList.add('warning');
+                            batteryLevel.classList.remove('low');
+                        } else if (data.batteryPercentage < 50) {
+                            batteryLevel.classList.add('low');
+                            batteryLevel.classList.remove('warning');
+                        } else {
+                            batteryLevel.classList.remove('warning');
+                            batteryLevel.classList.remove('low');
+                        }
+                    }
+                    
+                    // Update power source
+                    document.getElementById('power-source').textContent = data.powerSource || 'USB Accumulator';
+                    
+
+                    // Update battery consumption
+                    if (data.estimatedUsedCapacity !== undefined) {
+                        document.getElementById('battery-used').textContent = `${data.estimatedUsedCapacity.toFixed(2)} mAh`;
+                    }
+                    if (data.estimatedRemainingTime !== undefined) {
+                        document.getElementById('remaining-time').textContent = `${data.estimatedRemainingTime.toFixed(2)}`;
+                    }
+                    if (data.runTimeHours !== undefined) {
+                        document.getElementById('run-time').textContent = `${data.runTimeHours.toFixed(2)}`;
+                    }
+
+                    // Update last update time
+                    document.getElementById('last-update').textContent = data.lastUpdateTime;
+                });
+        }
+
+        // Refresh data manually
+        function refreshData() {
+            updateDashboard();
+            updateCharts();
+        }
+
+        // Clear history data
+        function clearHistory() {
+            if (confirm('Are you sure you want to clear all history data? This cannot be undone.')) {
+                fetch('/api/clear-history', {
+                    method: 'POST'
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert('History cleared successfully');
+                        updateCharts();
+                    } else {
+                        alert(`Error: ${data.message}`);
+                    }
+                });
+            }
+        }
+
+        // Handle timeframe selection
+        function setTimeframe(timeframe) {
+            // Update current timeframe
+            currentTimeframe = timeframe;
+            
+            // Update active button styling
+            document.querySelectorAll('.btn-timeframe').forEach(btn => {
+                if (btn.getAttribute('data-timeframe') === timeframe) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+            
+            // Update charts with new timeframe
+            updateCharts();
+        }
+        
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize charts
+            initCharts();
+            updateDashboard();
+            updateCharts();
+            
+            // Add event listeners to timeframe buttons
+            document.querySelectorAll('.btn-timeframe').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const timeframe = this.getAttribute('data-timeframe');
+                    setTimeframe(timeframe);
+                });
+            });
+            
+            // Auto-refresh every 5 seconds
+            setInterval(refreshData, 5000);
+        });
+    </script>
+</body>
+</html>

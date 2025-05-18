@@ -25,8 +25,8 @@ The system has been recoded to use MQTT instead of HTTP:
 
 ### For Raspberry Pi:
 - Python 3
-- Flask (`pip install flask`)
-- Paho MQTT client (`pip install paho-mqtt`)
+- Flask (`pip install flask`) (`sudo apt install python3-flask`)
+- Paho MQTT client (`pip install paho-mqtt`)(`sudo apt install python3-paho-mqtt`)
 - Mosquitto MQTT broker
 
 ## Setting Up the MQTT Broker on Raspberry Pi
@@ -73,7 +73,7 @@ The system has been recoded to use MQTT instead of HTTP:
 
 2. Update the MQTT settings:
    ```cpp
-   const char* mqtt_server = "192.168.1.100";  // Replace with your Raspberry Pi's IP address
+   const char* mqtt_server = "0.0.0.0";  // Replace with your Raspberry Pi's IP address
    const int mqtt_port = 1883;                 // Default MQTT port
    ```
 
@@ -99,10 +99,73 @@ The system has been recoded to use MQTT instead of HTTP:
      sudo python3 raspberry_pi_mqtt_server.py
      ```
    - The web interface will be available at the Raspberry Pi's IP address
+   - Alternatively, set up the Flask app as a service (see "Setting Up the Flask App as a Service" section below)
 
 2. **On the ESP32**:
    - Upload the `letterbox_ultrasound_mqtt.ino` sketch using Arduino IDE
    - Monitor the serial output to verify connection to WiFi and MQTT broker
+
+## Setting Up the Flask App as a Service
+
+To ensure the Flask app runs automatically on boot and restarts if it crashes, you can set it up as a systemd service:
+
+1. Create a systemd service file:
+   ```
+   sudo nano /etc/systemd/system/letterbox.service
+   ```
+
+2. Add the following content to the file (adjust paths and username as needed):
+   ```
+   [Unit]
+   Description=Smart Letterbox Flask Server
+   After=network.target mosquitto.service
+   Wants=mosquitto.service
+
+   [Service]
+   User=wasabi
+   WorkingDirectory=/path/to/your/letterbox_ultrasound_mqtt
+   ExecStart=/usr/bin/python3 /path/to/your/letterbox_ultrasound_mqtt/app.py
+   Restart=always
+   RestartSec=10
+   StandardOutput=journal
+   StandardError=journal
+   SyslogIdentifier=letterbox
+
+   [Install]
+   WantedBy=multi-user.target
+   ```
+   
+
+3. Reload systemd to recognize the new service:
+   ```
+   sudo systemctl daemon-reload
+   ```
+
+4. Enable the service to start on boot:
+   ```
+   sudo systemctl enable letterbox.service
+   ```
+
+5. Start the service:
+   ```
+   sudo systemctl start letterbox.service
+   ```
+
+6. Check the service status:
+   ```
+   sudo systemctl status letterbox.service
+   ```
+
+7. View logs if needed:
+   ```
+   sudo journalctl -u letterbox.service
+   ```
+
+8. To stop or restart the service:
+   ```
+   sudo systemctl stop letterbox.service
+   sudo systemctl restart letterbox.service
+   ```
 
 ## Testing the System
 
