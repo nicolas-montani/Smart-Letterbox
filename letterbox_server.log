@@ -15616,3 +15616,311 @@
 2025-05-18 15:22:13,801 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:22:13] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
 2025-05-18 15:22:16,203 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:22:16] "GET /api/data HTTP/1.1" 200 -
 2025-05-18 15:22:16,204 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:22:16] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:22:17,433 - letterbox_server - INFO - Received message on topic letterbox/data: {'durations': [493, 493, 494], 'batteryPercentage': 99, 'batteryCapacity': 10000.0, 'estimatedUsedCapacity': 17.52, 'estimatedRemainingTime': 124.78, 'runTimeHours': 0.22, 'powerSource': 'USB Accumulator', 'timestamp': '0:13:08'}
+2025-05-18 15:22:17,433 - letterbox_server - INFO - Received message on topic letterbox/data: {'durations': [493, 493, 494], 'batteryPercentage': 99, 'batteryCapacity': 10000.0, 'estimatedUsedCapacity': 17.52, 'estimatedRemainingTime': 124.78, 'runTimeHours': 0.22, 'powerSource': 'USB Accumulator', 'timestamp': '0:13:08'}
+2025-05-18 15:22:17,434 - letterbox_server - ERROR - Error processing message: 'powerSource'
+2025-05-18 15:22:17,434 - letterbox_server - INFO - Current data saved to file
+2025-05-18 15:22:18,808 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:22:18] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:22:18,810 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:22:18] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:22:21,246 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:22:21] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:22:21,248 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:22:21] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:22:23,821 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:22:23] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:22:23,823 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:22:23] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:22:26,302 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:22:26] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:22:26,304 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:22:26] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:22:28,819 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:22:28] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:22:28,821 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:22:28] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:22:30,044 - letterbox_server - INFO - Received message on topic letterbox/data: {'durations': [493, 493, 493], 'batteryPercentage': 99, 'batteryCapacity': 10000.0, 'estimatedUsedCapacity': 17.75, 'estimatedRemainingTime': 124.78, 'runTimeHours': 0.22, 'powerSource': 'USB Accumulator', 'timestamp': '0:13:18'}
+2025-05-18 15:22:30,044 - letterbox_server - INFO - Received message on topic letterbox/data: {'durations': [493, 493, 493], 'batteryPercentage': 99, 'batteryCapacity': 10000.0, 'estimatedUsedCapacity': 17.75, 'estimatedRemainingTime': 124.78, 'runTimeHours': 0.22, 'powerSource': 'USB Accumulator', 'timestamp': '0:13:18'}
+2025-05-18 15:22:30,044 - letterbox_server - ERROR - Error processing message: 'powerSource'
+2025-05-18 15:22:30,046 - letterbox_server - INFO - Current data saved to file
+2025-05-18 15:22:31,354 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:22:31] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:22:31,356 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:22:31] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:22:33,845 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:22:33] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:22:33,848 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:22:33] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:22:36,386 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:22:36] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:22:36,389 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:22:36] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:22:38,111 - letterbox_server - INFO - Received message on topic letterbox/data: {'durations': [493, 493, 493], 'batteryPercentage': 99, 'batteryCapacity': 10000.0, 'estimatedUsedCapacity': 17.98, 'estimatedRemainingTime': 124.78, 'runTimeHours': 0.22, 'powerSource': 'USB Accumulator', 'timestamp': '0:13:28'}
+2025-05-18 15:22:38,111 - letterbox_server - INFO - Received message on topic letterbox/data: {'durations': [493, 493, 493], 'batteryPercentage': 99, 'batteryCapacity': 10000.0, 'estimatedUsedCapacity': 17.98, 'estimatedRemainingTime': 124.78, 'runTimeHours': 0.22, 'powerSource': 'USB Accumulator', 'timestamp': '0:13:28'}
+2025-05-18 15:22:38,112 - letterbox_server - ERROR - Error processing message: 'powerSource'
+2025-05-18 15:22:38,113 - letterbox_server - INFO - Current data saved to file
+2025-05-18 15:22:38,844 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:22:38] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:22:38,845 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:22:38] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:22:41,578 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:22:41] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:22:41,579 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:22:41] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:22:43,868 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:22:43] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:22:43,871 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:22:43] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:22:46,432 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:22:46] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:22:46,434 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:22:46] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:22:48,770 - letterbox_server - INFO - Received message on topic letterbox/data: {'durations': [153, 323, 191], 'batteryPercentage': 99, 'batteryCapacity': 10000.0, 'estimatedUsedCapacity': 18.21, 'estimatedRemainingTime': 124.77, 'runTimeHours': 0.23, 'powerSource': 'USB Accumulator', 'timestamp': '0:13:39'}
+2025-05-18 15:22:48,770 - letterbox_server - INFO - Received message on topic letterbox/data: {'durations': [153, 323, 191], 'batteryPercentage': 99, 'batteryCapacity': 10000.0, 'estimatedUsedCapacity': 18.21, 'estimatedRemainingTime': 124.77, 'runTimeHours': 0.23, 'powerSource': 'USB Accumulator', 'timestamp': '0:13:39'}
+2025-05-18 15:22:48,770 - letterbox_server - INFO - New letter has arrived! Distance decreased by 46.45mm
+2025-05-18 15:22:48,770 - letterbox_server - INFO - New letter has arrived! Distance decreased by 46.45mm
+2025-05-18 15:22:48,771 - letterbox_server - INFO - Published notification to NewLetter
+2025-05-18 15:22:48,771 - letterbox_server - INFO - Published notification to NewLetter
+2025-05-18 15:22:48,771 - letterbox_server - ERROR - Error processing message: 'powerSource'
+2025-05-18 15:22:48,772 - letterbox_server - INFO - Current data saved to file
+2025-05-18 15:22:48,868 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:22:48] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:22:48,870 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:22:48] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:22:51,488 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:22:51] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:22:51,491 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:22:51] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:22:53,889 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:22:53] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:22:53,891 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:22:53] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:22:56,682 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:22:56] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:22:56,685 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:22:56] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:22:58,806 - letterbox_server - INFO - Received message on topic letterbox/data: {'durations': [323, 267, 134], 'batteryPercentage': 99, 'batteryCapacity': 10000.0, 'estimatedUsedCapacity': 18.44, 'estimatedRemainingTime': 124.77, 'runTimeHours': 0.23, 'powerSource': 'USB Accumulator', 'timestamp': '0:13:49'}
+2025-05-18 15:22:58,806 - letterbox_server - INFO - Received message on topic letterbox/data: {'durations': [323, 267, 134], 'batteryPercentage': 99, 'batteryCapacity': 10000.0, 'estimatedUsedCapacity': 18.44, 'estimatedRemainingTime': 124.77, 'runTimeHours': 0.23, 'powerSource': 'USB Accumulator', 'timestamp': '0:13:49'}
+2025-05-18 15:22:58,806 - letterbox_server - ERROR - Error processing message: 'powerSource'
+2025-05-18 15:22:58,807 - letterbox_server - INFO - Current data saved to file
+2025-05-18 15:22:58,888 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:22:58] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:22:58,891 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:22:58] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:23:01,716 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:23:01] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:23:01,718 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:23:01] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:23:03,895 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:23:03] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:23:03,897 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:23:03] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:23:06,787 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:23:06] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:23:06,789 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:23:06] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:23:08,898 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:23:08] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:23:08,900 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:23:08] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:23:09,147 - letterbox_server - INFO - Received message on topic letterbox/data: {'durations': [342, 399, 5217], 'batteryPercentage': 99, 'batteryCapacity': 10000.0, 'estimatedUsedCapacity': 18.66, 'estimatedRemainingTime': 124.77, 'runTimeHours': 0.23, 'powerSource': 'USB Accumulator', 'timestamp': '0:13:59'}
+2025-05-18 15:23:09,147 - letterbox_server - INFO - Received message on topic letterbox/data: {'durations': [342, 399, 5217], 'batteryPercentage': 99, 'batteryCapacity': 10000.0, 'estimatedUsedCapacity': 18.66, 'estimatedRemainingTime': 124.77, 'runTimeHours': 0.23, 'powerSource': 'USB Accumulator', 'timestamp': '0:13:59'}
+2025-05-18 15:23:09,147 - letterbox_server - INFO - Letter removed! Distance increased by 299.38mm
+2025-05-18 15:23:09,147 - letterbox_server - INFO - Letter removed! Distance increased by 299.38mm
+2025-05-18 15:23:09,148 - letterbox_server - INFO - Published notification to NewLetter
+2025-05-18 15:23:09,148 - letterbox_server - INFO - Published notification to NewLetter
+2025-05-18 15:23:09,148 - letterbox_server - ERROR - Error processing message: 'powerSource'
+2025-05-18 15:23:09,148 - letterbox_server - INFO - Current data saved to file
+2025-05-18 15:23:11,841 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:23:11] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:23:11,842 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:23:11] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:23:13,917 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:23:13] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:23:13,919 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:23:13] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:23:16,898 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:23:16] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:23:16,900 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:23:16] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:23:18,918 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:23:18] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:23:18,919 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:23:18] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:23:19,490 - letterbox_server - INFO - Received message on topic letterbox/data: {'durations': [2151, 2151, 2164], 'batteryPercentage': 99, 'batteryCapacity': 10000.0, 'estimatedUsedCapacity': 18.89, 'estimatedRemainingTime': 124.76, 'runTimeHours': 0.24, 'powerSource': 'USB Accumulator', 'timestamp': '0:14:10'}
+2025-05-18 15:23:19,490 - letterbox_server - INFO - Received message on topic letterbox/data: {'durations': [2151, 2151, 2164], 'batteryPercentage': 99, 'batteryCapacity': 10000.0, 'estimatedUsedCapacity': 18.89, 'estimatedRemainingTime': 124.76, 'runTimeHours': 0.24, 'powerSource': 'USB Accumulator', 'timestamp': '0:14:10'}
+2025-05-18 15:23:19,490 - letterbox_server - INFO - Letter removed! Distance increased by 29.06mm
+2025-05-18 15:23:19,490 - letterbox_server - INFO - Letter removed! Distance increased by 29.06mm
+2025-05-18 15:23:19,490 - letterbox_server - INFO - Published notification to NewLetter
+2025-05-18 15:23:19,490 - letterbox_server - INFO - Published notification to NewLetter
+2025-05-18 15:23:19,491 - letterbox_server - ERROR - Error processing message: 'powerSource'
+2025-05-18 15:23:19,492 - letterbox_server - INFO - Current data saved to file
+2025-05-18 15:23:19,495 - letterbox_server - INFO - History data saved to file (80 entries)
+2025-05-18 15:23:21,950 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:23:21] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:23:21,951 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:23:21] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:23:23,939 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:23:23] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:23:23,940 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:23:23] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:23:27,240 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:23:27] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:23:27,241 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:23:27] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:23:28,939 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:23:28] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:23:28,942 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:23:28] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:23:29,833 - letterbox_server - INFO - Received message on topic letterbox/data: {'durations': [2910, 2881, 2920], 'batteryPercentage': 99, 'batteryCapacity': 10000.0, 'estimatedUsedCapacity': 19.12, 'estimatedRemainingTime': 124.76, 'runTimeHours': 0.24, 'powerSource': 'USB Accumulator', 'timestamp': '0:14:20'}
+2025-05-18 15:23:29,833 - letterbox_server - INFO - Received message on topic letterbox/data: {'durations': [2910, 2881, 2920], 'batteryPercentage': 99, 'batteryCapacity': 10000.0, 'estimatedUsedCapacity': 19.12, 'estimatedRemainingTime': 124.76, 'runTimeHours': 0.24, 'powerSource': 'USB Accumulator', 'timestamp': '0:14:20'}
+2025-05-18 15:23:29,833 - letterbox_server - INFO - Letter removed! Distance increased by 128.41mm
+2025-05-18 15:23:29,833 - letterbox_server - INFO - Letter removed! Distance increased by 128.41mm
+2025-05-18 15:23:29,834 - letterbox_server - INFO - Published notification to NewLetter
+2025-05-18 15:23:29,834 - letterbox_server - INFO - Published notification to NewLetter
+2025-05-18 15:23:29,834 - letterbox_server - ERROR - Error processing message: 'powerSource'
+2025-05-18 15:23:29,835 - letterbox_server - INFO - Current data saved to file
+2025-05-18 15:23:31,997 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:23:31] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:23:31,999 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:23:31] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:23:33,941 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:23:33] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:23:33,943 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:23:33] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:23:37,027 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:23:37] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:23:37,030 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:23:37] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:23:38,960 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:23:38] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:23:38,963 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:23:38] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:23:40,277 - letterbox_server - INFO - Received message on topic letterbox/data: {'durations': [8692, 8715, 8690], 'batteryPercentage': 99, 'batteryCapacity': 10000.0, 'estimatedUsedCapacity': 19.36, 'estimatedRemainingTime': 124.76, 'runTimeHours': 0.24, 'powerSource': 'USB Accumulator', 'timestamp': '0:14:31'}
+2025-05-18 15:23:40,277 - letterbox_server - INFO - Received message on topic letterbox/data: {'durations': [8692, 8715, 8690], 'batteryPercentage': 99, 'batteryCapacity': 10000.0, 'estimatedUsedCapacity': 19.36, 'estimatedRemainingTime': 124.76, 'runTimeHours': 0.24, 'powerSource': 'USB Accumulator', 'timestamp': '0:14:31'}
+2025-05-18 15:23:40,277 - letterbox_server - INFO - Letter removed! Distance increased by 994.48mm
+2025-05-18 15:23:40,277 - letterbox_server - INFO - Letter removed! Distance increased by 994.48mm
+2025-05-18 15:23:40,278 - letterbox_server - INFO - Published notification to NewLetter
+2025-05-18 15:23:40,278 - letterbox_server - INFO - Published notification to NewLetter
+2025-05-18 15:23:40,278 - letterbox_server - ERROR - Error processing message: 'powerSource'
+2025-05-18 15:23:40,279 - letterbox_server - INFO - Current data saved to file
+2025-05-18 15:23:42,086 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:23:42] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:23:42,088 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:23:42] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:23:43,962 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:23:43] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:23:43,964 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:23:43] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:23:47,144 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:23:47] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:23:47,146 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:23:47] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:23:48,976 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:23:48] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:23:48,978 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:23:48] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:23:50,655 - letterbox_server - INFO - Received message on topic letterbox/data: {'durations': [8690, 8695, 8689], 'batteryPercentage': 99, 'batteryCapacity': 10000.0, 'estimatedUsedCapacity': 19.59, 'estimatedRemainingTime': 124.76, 'runTimeHours': 0.24, 'powerSource': 'USB Accumulator', 'timestamp': '0:14:41'}
+2025-05-18 15:23:50,655 - letterbox_server - INFO - Received message on topic letterbox/data: {'durations': [8690, 8695, 8689], 'batteryPercentage': 99, 'batteryCapacity': 10000.0, 'estimatedUsedCapacity': 19.59, 'estimatedRemainingTime': 124.76, 'runTimeHours': 0.24, 'powerSource': 'USB Accumulator', 'timestamp': '0:14:41'}
+2025-05-18 15:23:50,655 - letterbox_server - ERROR - Error processing message: 'powerSource'
+2025-05-18 15:23:50,656 - letterbox_server - INFO - Current data saved to file
+2025-05-18 15:23:52,217 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:23:52] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:23:52,218 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:23:52] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:23:53,983 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:23:53] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:23:53,986 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:23:53] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:23:57,262 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:23:57] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:23:57,263 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:23:57] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:23:58,993 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:23:58] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:23:58,994 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:23:58] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:24:00,952 - letterbox_server - INFO - Received message on topic letterbox/data: {'durations': [8694, 8691, 8694], 'batteryPercentage': 99, 'batteryCapacity': 10000.0, 'estimatedUsedCapacity': 19.82, 'estimatedRemainingTime': 124.75, 'runTimeHours': 0.25, 'powerSource': 'USB Accumulator', 'timestamp': '0:14:51'}
+2025-05-18 15:24:00,952 - letterbox_server - INFO - Received message on topic letterbox/data: {'durations': [8694, 8691, 8694], 'batteryPercentage': 99, 'batteryCapacity': 10000.0, 'estimatedUsedCapacity': 19.82, 'estimatedRemainingTime': 124.75, 'runTimeHours': 0.25, 'powerSource': 'USB Accumulator', 'timestamp': '0:14:51'}
+2025-05-18 15:24:00,953 - letterbox_server - ERROR - Error processing message: 'powerSource'
+2025-05-18 15:24:00,954 - letterbox_server - INFO - Current data saved to file
+2025-05-18 15:24:02,288 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:24:02] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:24:02,289 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:24:02] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:24:04,011 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:24:04] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:24:04,013 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:24:04] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:24:07,317 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:24:07] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:24:07,317 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:24:07] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:24:09,014 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:24:09] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:24:09,017 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:24:09] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:24:11,315 - letterbox_server - INFO - Received message on topic letterbox/data: {'durations': [8694, 8689, 8690], 'batteryPercentage': 99, 'batteryCapacity': 10000.0, 'estimatedUsedCapacity': 20.05, 'estimatedRemainingTime': 124.75, 'runTimeHours': 0.25, 'powerSource': 'USB Accumulator', 'timestamp': '0:15:02'}
+2025-05-18 15:24:11,315 - letterbox_server - INFO - Received message on topic letterbox/data: {'durations': [8694, 8689, 8690], 'batteryPercentage': 99, 'batteryCapacity': 10000.0, 'estimatedUsedCapacity': 20.05, 'estimatedRemainingTime': 124.75, 'runTimeHours': 0.25, 'powerSource': 'USB Accumulator', 'timestamp': '0:15:02'}
+2025-05-18 15:24:11,315 - letterbox_server - ERROR - Error processing message: 'powerSource'
+2025-05-18 15:24:11,316 - letterbox_server - INFO - Current data saved to file
+2025-05-18 15:24:12,335 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:24:12] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:24:12,336 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:24:12] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:24:14,017 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:24:14] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:24:14,019 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:24:14] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:24:17,358 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:24:17] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:24:17,359 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:24:17] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:24:19,036 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:24:19] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:24:19,038 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:24:19] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:24:21,750 - letterbox_server - INFO - Received message on topic letterbox/data: {'durations': [8691, 8690, 8693], 'batteryPercentage': 99, 'batteryCapacity': 10000.0, 'estimatedUsedCapacity': 20.28, 'estimatedRemainingTime': 124.75, 'runTimeHours': 0.25, 'powerSource': 'USB Accumulator', 'timestamp': '0:15:12'}
+2025-05-18 15:24:21,750 - letterbox_server - INFO - Received message on topic letterbox/data: {'durations': [8691, 8690, 8693], 'batteryPercentage': 99, 'batteryCapacity': 10000.0, 'estimatedUsedCapacity': 20.28, 'estimatedRemainingTime': 124.75, 'runTimeHours': 0.25, 'powerSource': 'USB Accumulator', 'timestamp': '0:15:12'}
+2025-05-18 15:24:21,750 - letterbox_server - ERROR - Error processing message: 'powerSource'
+2025-05-18 15:24:21,751 - letterbox_server - INFO - Current data saved to file
+2025-05-18 15:24:22,398 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:24:22] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:24:22,400 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:24:22] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:24:24,036 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:24:24] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:24:24,038 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:24:24] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:24:27,435 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:24:27] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:24:27,437 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:24:27] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:24:29,055 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:24:29] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:24:29,058 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:24:29] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:24:32,026 - letterbox_server - INFO - Received message on topic letterbox/data: {'durations': [8691, 8691, 8689], 'batteryPercentage': 99, 'batteryCapacity': 10000.0, 'estimatedUsedCapacity': 20.51, 'estimatedRemainingTime': 124.74, 'runTimeHours': 0.26, 'powerSource': 'USB Accumulator', 'timestamp': '0:15:22'}
+2025-05-18 15:24:32,026 - letterbox_server - INFO - Received message on topic letterbox/data: {'durations': [8691, 8691, 8689], 'batteryPercentage': 99, 'batteryCapacity': 10000.0, 'estimatedUsedCapacity': 20.51, 'estimatedRemainingTime': 124.74, 'runTimeHours': 0.26, 'powerSource': 'USB Accumulator', 'timestamp': '0:15:22'}
+2025-05-18 15:24:32,026 - letterbox_server - ERROR - Error processing message: 'powerSource'
+2025-05-18 15:24:32,027 - letterbox_server - INFO - Current data saved to file
+2025-05-18 15:24:32,466 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:24:32] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:24:32,469 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:24:32] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:24:34,082 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:24:34] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:24:34,084 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:24:34] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:24:37,499 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:24:37] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:24:37,502 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:24:37] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:24:39,084 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:24:39] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:24:39,086 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:24:39] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:24:42,536 - letterbox_server - INFO - Received message on topic letterbox/data: {'durations': [8694, 8695, 8694], 'batteryPercentage': 99, 'batteryCapacity': 10000.0, 'estimatedUsedCapacity': 20.74, 'estimatedRemainingTime': 124.74, 'runTimeHours': 0.26, 'powerSource': 'USB Accumulator', 'timestamp': '0:15:33'}
+2025-05-18 15:24:42,536 - letterbox_server - INFO - Received message on topic letterbox/data: {'durations': [8694, 8695, 8694], 'batteryPercentage': 99, 'batteryCapacity': 10000.0, 'estimatedUsedCapacity': 20.74, 'estimatedRemainingTime': 124.74, 'runTimeHours': 0.26, 'powerSource': 'USB Accumulator', 'timestamp': '0:15:33'}
+2025-05-18 15:24:42,537 - letterbox_server - ERROR - Error processing message: 'powerSource'
+2025-05-18 15:24:42,538 - letterbox_server - INFO - Current data saved to file
+2025-05-18 15:24:42,554 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:24:42] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:24:42,555 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:24:42] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:24:44,104 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:24:44] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:24:44,107 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:24:44] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:24:47,979 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:24:47] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:24:47,982 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:24:47] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:24:49,109 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:24:49] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:24:49,112 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:24:49] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:24:52,776 - letterbox_server - INFO - Received message on topic letterbox/data: {'durations': [8691, 8689, 8691], 'batteryPercentage': 99, 'batteryCapacity': 10000.0, 'estimatedUsedCapacity': 20.97, 'estimatedRemainingTime': 124.74, 'runTimeHours': 0.26, 'powerSource': 'USB Accumulator', 'timestamp': '0:15:43'}
+2025-05-18 15:24:52,776 - letterbox_server - INFO - Received message on topic letterbox/data: {'durations': [8691, 8689, 8691], 'batteryPercentage': 99, 'batteryCapacity': 10000.0, 'estimatedUsedCapacity': 20.97, 'estimatedRemainingTime': 124.74, 'runTimeHours': 0.26, 'powerSource': 'USB Accumulator', 'timestamp': '0:15:43'}
+2025-05-18 15:24:52,777 - letterbox_server - ERROR - Error processing message: 'powerSource'
+2025-05-18 15:24:52,777 - letterbox_server - INFO - Current data saved to file
+2025-05-18 15:24:53,027 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:24:53] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:24:53,029 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:24:53] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:24:54,116 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:24:54] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:24:54,120 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:24:54] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:24:58,085 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:24:58] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:24:58,087 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:24:58] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:24:59,130 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:24:59] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:24:59,132 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:24:59] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:25:03,141 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:25:03] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:25:03,143 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:25:03] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:25:03,221 - letterbox_server - INFO - Received message on topic letterbox/data: {'durations': [8695, 8691, 8690], 'batteryPercentage': 99, 'batteryCapacity': 10000.0, 'estimatedUsedCapacity': 21.2, 'estimatedRemainingTime': 124.74, 'runTimeHours': 0.26, 'powerSource': 'USB Accumulator', 'timestamp': '0:15:53'}
+2025-05-18 15:25:03,221 - letterbox_server - INFO - Received message on topic letterbox/data: {'durations': [8695, 8691, 8690], 'batteryPercentage': 99, 'batteryCapacity': 10000.0, 'estimatedUsedCapacity': 21.2, 'estimatedRemainingTime': 124.74, 'runTimeHours': 0.26, 'powerSource': 'USB Accumulator', 'timestamp': '0:15:53'}
+2025-05-18 15:25:03,221 - letterbox_server - ERROR - Error processing message: 'powerSource'
+2025-05-18 15:25:03,222 - letterbox_server - INFO - Current data saved to file
+2025-05-18 15:25:03,225 - letterbox_server - INFO - History data saved to file (90 entries)
+2025-05-18 15:25:04,157 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:25:04] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:25:04,159 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:25:04] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:25:08,200 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:25:08] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:25:08,201 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:25:08] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:25:09,152 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:25:09] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:25:09,155 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:25:09] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:25:13,257 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:25:13] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:25:13,259 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:25:13] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:25:13,564 - letterbox_server - INFO - Received message on topic letterbox/data: {'durations': [8690, 8690, 8694], 'batteryPercentage': 99, 'batteryCapacity': 10000.0, 'estimatedUsedCapacity': 21.43, 'estimatedRemainingTime': 124.73, 'runTimeHours': 0.27, 'powerSource': 'USB Accumulator', 'timestamp': '0:16:04'}
+2025-05-18 15:25:13,564 - letterbox_server - INFO - Received message on topic letterbox/data: {'durations': [8690, 8690, 8694], 'batteryPercentage': 99, 'batteryCapacity': 10000.0, 'estimatedUsedCapacity': 21.43, 'estimatedRemainingTime': 124.73, 'runTimeHours': 0.27, 'powerSource': 'USB Accumulator', 'timestamp': '0:16:04'}
+2025-05-18 15:25:13,564 - letterbox_server - ERROR - Error processing message: 'powerSource'
+2025-05-18 15:25:13,565 - letterbox_server - INFO - Current data saved to file
+2025-05-18 15:25:14,178 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:25:14] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:25:14,180 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:25:14] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:25:18,292 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:25:18] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:25:18,292 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:25:18] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:25:19,177 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:25:19] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:25:19,179 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:25:19] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:25:23,321 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:25:23] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:25:23,322 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:25:23] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:25:23,847 - letterbox_server - INFO - Received message on topic letterbox/data: {'durations': [8691, 8691, 8692], 'batteryPercentage': 99, 'batteryCapacity': 10000.0, 'estimatedUsedCapacity': 21.66, 'estimatedRemainingTime': 124.73, 'runTimeHours': 0.27, 'powerSource': 'USB Accumulator', 'timestamp': '0:16:14'}
+2025-05-18 15:25:23,847 - letterbox_server - INFO - Received message on topic letterbox/data: {'durations': [8691, 8691, 8692], 'batteryPercentage': 99, 'batteryCapacity': 10000.0, 'estimatedUsedCapacity': 21.66, 'estimatedRemainingTime': 124.73, 'runTimeHours': 0.27, 'powerSource': 'USB Accumulator', 'timestamp': '0:16:14'}
+2025-05-18 15:25:23,847 - letterbox_server - ERROR - Error processing message: 'powerSource'
+2025-05-18 15:25:23,848 - letterbox_server - INFO - Current data saved to file
+2025-05-18 15:25:24,325 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:25:24] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:25:24,327 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:25:24] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:25:28,398 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:25:28] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:25:28,399 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:25:28] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:25:29,199 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:25:29] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:25:29,201 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:25:29] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:25:33,432 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:25:33] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:25:33,434 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:25:33] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:25:34,204 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:25:34] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:25:34,206 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:25:34] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:25:34,208 - letterbox_server - INFO - Received message on topic letterbox/data: {'durations': [8695, 8691, 8695], 'batteryPercentage': 99, 'batteryCapacity': 10000.0, 'estimatedUsedCapacity': 21.89, 'estimatedRemainingTime': 124.73, 'runTimeHours': 0.27, 'powerSource': 'USB Accumulator', 'timestamp': '0:16:25'}
+2025-05-18 15:25:34,208 - letterbox_server - INFO - Received message on topic letterbox/data: {'durations': [8695, 8691, 8695], 'batteryPercentage': 99, 'batteryCapacity': 10000.0, 'estimatedUsedCapacity': 21.89, 'estimatedRemainingTime': 124.73, 'runTimeHours': 0.27, 'powerSource': 'USB Accumulator', 'timestamp': '0:16:25'}
+2025-05-18 15:25:34,208 - letterbox_server - ERROR - Error processing message: 'powerSource'
+2025-05-18 15:25:34,209 - letterbox_server - INFO - Current data saved to file
+2025-05-18 15:25:38,463 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:25:38] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:25:38,465 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:25:38] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:25:39,222 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:25:39] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:25:39,223 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:25:39] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:25:43,490 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:25:43] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:25:43,492 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:25:43] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:25:44,223 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:25:44] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:25:44,226 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:25:44] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:25:44,693 - letterbox_server - INFO - Received message on topic letterbox/data: {'durations': [8696, 8695, 8695], 'batteryPercentage': 99, 'batteryCapacity': 10000.0, 'estimatedUsedCapacity': 22.12, 'estimatedRemainingTime': 124.72, 'runTimeHours': 0.28, 'powerSource': 'USB Accumulator', 'timestamp': '0:16:35'}
+2025-05-18 15:25:44,693 - letterbox_server - INFO - Received message on topic letterbox/data: {'durations': [8696, 8695, 8695], 'batteryPercentage': 99, 'batteryCapacity': 10000.0, 'estimatedUsedCapacity': 22.12, 'estimatedRemainingTime': 124.72, 'runTimeHours': 0.28, 'powerSource': 'USB Accumulator', 'timestamp': '0:16:35'}
+2025-05-18 15:25:44,694 - letterbox_server - ERROR - Error processing message: 'powerSource'
+2025-05-18 15:25:44,695 - letterbox_server - INFO - Current data saved to file
+2025-05-18 15:25:48,587 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:25:48] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:25:48,589 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:25:48] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:25:49,241 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:25:49] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:25:49,244 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:25:49] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:25:53,669 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:25:53] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:25:53,672 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:25:53] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:25:54,246 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:25:54] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:25:54,248 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:25:54] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:25:55,036 - letterbox_server - INFO - Received message on topic letterbox/data: {'durations': [8691, 8690, 8693], 'batteryPercentage': 99, 'batteryCapacity': 10000.0, 'estimatedUsedCapacity': 22.35, 'estimatedRemainingTime': 124.72, 'runTimeHours': 0.28, 'powerSource': 'USB Accumulator', 'timestamp': '0:16:45'}
+2025-05-18 15:25:55,036 - letterbox_server - INFO - Received message on topic letterbox/data: {'durations': [8691, 8690, 8693], 'batteryPercentage': 99, 'batteryCapacity': 10000.0, 'estimatedUsedCapacity': 22.35, 'estimatedRemainingTime': 124.72, 'runTimeHours': 0.28, 'powerSource': 'USB Accumulator', 'timestamp': '0:16:45'}
+2025-05-18 15:25:55,037 - letterbox_server - ERROR - Error processing message: 'powerSource'
+2025-05-18 15:25:55,038 - letterbox_server - INFO - Current data saved to file
+2025-05-18 15:25:58,748 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:25:58] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:25:58,751 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:25:58] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:25:59,249 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:25:59] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:25:59,251 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:25:59] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:26:03,791 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:26:03] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:26:03,793 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:26:03] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:26:04,281 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:26:04] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:26:04,283 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:26:04] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:26:05,379 - letterbox_server - INFO - Received message on topic letterbox/data: {'durations': [8693, 8693, 8716], 'batteryPercentage': 99, 'batteryCapacity': 10000.0, 'estimatedUsedCapacity': 22.58, 'estimatedRemainingTime': 124.72, 'runTimeHours': 0.28, 'powerSource': 'USB Accumulator', 'timestamp': '0:16:56'}
+2025-05-18 15:26:05,379 - letterbox_server - INFO - Received message on topic letterbox/data: {'durations': [8693, 8693, 8716], 'batteryPercentage': 99, 'batteryCapacity': 10000.0, 'estimatedUsedCapacity': 22.58, 'estimatedRemainingTime': 124.72, 'runTimeHours': 0.28, 'powerSource': 'USB Accumulator', 'timestamp': '0:16:56'}
+2025-05-18 15:26:05,379 - letterbox_server - ERROR - Error processing message: 'powerSource'
+2025-05-18 15:26:05,379 - letterbox_server - INFO - Current data saved to file
+2025-05-18 15:26:08,869 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:26:08] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:26:08,871 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:26:08] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:26:09,268 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:26:09] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:26:09,270 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:26:09] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:26:13,907 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:26:13] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:26:13,910 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:26:13] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:26:14,321 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:26:14] "GET /api/data HTTP/1.1" 200 -
+2025-05-18 15:26:14,323 - werkzeug - INFO - 127.0.0.1 - - [18/May/2025 15:26:14] "GET /api/history?timeframe=1h HTTP/1.1" 200 -
+2025-05-18 15:26:15,721 - letterbox_server - INFO - Received message on topic letterbox/data: {'durations': [8695, 8693, 8691], 'batteryPercentage': 99, 'batteryCapacity': 10000.0, 'estimatedUsedCapacity': 22.81, 'estimatedRemainingTime': 124.71, 'runTimeHours': 0.29, 'powerSource': 'USB Accumulator', 'timestamp': '0:17:06'}
+2025-05-18 15:26:15,721 - letterbox_server - INFO - Received message on topic letterbox/data: {'durations': [8695, 8693, 8691], 'batteryPercentage': 99, 'batteryCapacity': 10000.0, 'estimatedUsedCapacity': 22.81, 'estimatedRemainingTime': 124.71, 'runTimeHours': 0.29, 'powerSource': 'USB Accumulator', 'timestamp': '0:17:06'}
+2025-05-18 15:26:15,721 - letterbox_server - ERROR - Error processing message: 'powerSource'
+2025-05-18 15:26:15,721 - letterbox_server - INFO - Current data saved to file
