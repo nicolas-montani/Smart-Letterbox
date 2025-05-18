@@ -57,7 +57,7 @@ The web dashboard provides:
 ## Improvements from v1
 
 - Direct transmission of raw data from ESP32 to MQTT broker
-- Faster sensing rate (every second instead of every 10 seconds)
+- Sleep time (every 10 seconds instead of every seconds)
 - Battery monitoring and consumption estimation
 - Modern, responsive dashboard design
 - Interactive graphs for data visualization
