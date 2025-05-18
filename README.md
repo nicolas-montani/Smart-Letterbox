@@ -109,6 +109,10 @@ Throughout our design process, we navigated several significant trade-offs:
 - This simplified implementation but created a dependency on a third-party service
 - The trade-off prioritized development speed and user experience over complete autonomy
 
+### Edge Device vs. Backend Computation:
+- One significant trade-off was deciding how much computation should be performed on the edge device (ESP32) versus the backend server (Raspberry Pi).
+- Edge Device: Performs real-time mail detection and basic data processing. This reduces the load on the backend but can limit processing capabilities due to resource constraints on the ESP32.
+- Backend Server: Offloading more intensive computational tasks (like historical data analysis, web interface rendering, and notification management) to the Raspberry Pi allows for greater scalability. The Raspberry Pi’s additional processing power enables more advanced functionalities without overloading the edge device.
 
 ## System build
 The Smart Letterbox system can be reproduced by following the detailed instructions provided in our documentation files:
