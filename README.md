@@ -24,6 +24,8 @@ We decided early on to use an ultrasonic sensor (HC-SR04) as our primary sensing
 - Simple calibration: Self-calibrates to establish the "empty" baseline
 - Low power consumption: Suitable for battery-powered operation
 
+![Ultrasonic Sensor HC-SR04](images/ultrasonic.jpg)
+
 We originally considered including a scale sensor to measure weight changes when mail arrived. However, we encountered practical challenges with implementing this in a letterbox context. Additionally, we learned that another project group was already pursuing a weight-based approach, which motivated us to differentiate our solution.
 
 ### Prototype Design
@@ -91,6 +93,7 @@ In the updated Smart Letterbox v2 architecture, we adopted a more centralized pr
 
 This revised compute distribution shifts decision-making and visualization to the server side, enabling more sophisticated analysis while keeping the sensor node lightweight and power-efficient.
 
+![ESP32 and Raspberry Pi](images/raspberrypi-esp32-udp-protocol.png)
 
 ## Trade-Offs
 
@@ -237,6 +240,18 @@ The system now also monitors battery voltage and estimates remaining runtime.
 - Web dashboard with live updates
 - Resilience to network interruptions
 - Detailed (serial) logging for troubleshooting
+
+📊 Battery Monitoring Graph
+![Battery Status Over Time](images/batterystatusovertimedashboard.png)
+
+📈 Distance Monitoring Graph
+![Distance Over Time](images/distanceovertimedashboard.png)
+
+🧠 Modern Dashboard Overview
+![Modern Smart Letterbox Dashboard](images/smartletterboxdashboard.png)
+
+📋 Classic Dashboard View
+![Classic Smart Letterbox Dashboard](images/classicdashboard.jpg)
 
 ## Future Extensions
 Our modular and extensible design provides multiple pathways for future enhancements:
