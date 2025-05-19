@@ -34,6 +34,8 @@ One key decision was to construct our prototype using a cardboard box rather tha
 - It simplified iteration and modification during development
 - It created a controlled environment for sensor testing without external variables
 
+![Cardboard Prototype](images/prototype.png)
+
 ### Battery and Power Considerations
 After evaluating power requirements, we made the following decisions:
 
