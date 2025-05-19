@@ -1,14 +1,14 @@
-# Building a Smart Mailbox
-A projct as part of the 'Embedded Sensing Systems' course at the university of St.Gallen in Spring 2025. 
+# Building a Smart Letterbox
+A project as part of the 'Embedded Sensing Systems' course at the university of St.Gallen in Spring 2025. 
 
 
 ## General Overview
-This repository consists of two implementations of the Smart Letterbox system: a base version using HTTP for communication, and an enhanced version operating over MQTT. These implementations represent the evolution of our design thinking and technical approach throughout the project.
+This repository consists of two implementations of the Smart Letterbox system: a base version using HTTP for communication, and an enhanced version operating over MQTT. These implementations represent the evolution of our design thinking and technical approach throughout the project. We also developed an advanced version (MQTT System v2) featuring raw sensor data streaming, battery tracking, and a fully modernized web dashboard.
 
 ## Main Objectives
 Our primary objectives for the Smart Letterbox project were:
 
-- connectivity and Reliability: Create a system that maintains robust connectivity even in challenging WiFi environments, ensuring continuous mail monitoring.
+- Connectivity and Reliability: Create a system that maintains robust connectivity even in challenging WiFi environments, ensuring continuous mail monitoring.
 - Simple User Experience: Provide an intuitive interface that gives users clear information about their mail status without requiring technical knowledge.
 - Real-time Notifications: Alert users promptly when mail arrives or is removed, making the traditional letterbox "smart" by connecting it to the user's digital life.
 - Low Maintenance Operation: Design a system that operates reliably for extended periods without requiring frequent maintenance or interventions.
@@ -30,14 +30,14 @@ We originally considered including a scale sensor to measure weight changes when
 One key decision was to construct our prototype using a cardboard box rather than modifying an actual letterbox. This pragmatic choice was driven by several factors:
 
 - Our team members were distributed across three different cities, making it impractical to work on a shared physical letterbox
-The cardboard prototype allowed each team member to work on the setup in the university office at Torstrasse.
+- The cardboard prototype allowed each team member to work on the setup in the university office at Torstrasse.
 - It simplified iteration and modification during development
 - It created a controlled environment for sensor testing without external variables
 
 ### Battery and Power Considerations
 After evaluating power requirements, we made the following decisions:
 
-ESP32 as the edge device: The ESP32 offeres sufficient processing capabilities and robust WiFi connectivity features that were crucial for reliability. It is powerable with a simple external battery via mini-usb. 
+ESP32 as the edge device: The ESP32 offers sufficient processing capabilities and robust WiFi connectivity features that were crucial for reliability. It is powerable with a simple external battery via mini-usb. 
 
 USB power with battery backup: For our prototype, we designed the system to primarily use USB power, with provisions for connecting a power bank as a backup power source. This decision balanced:
 - Practical testing needs (continuous operation during development)
@@ -55,7 +55,7 @@ Power optimization in software: Rather than compromising on hardware capabilitie
 - Direct HTTP POST requests from ESP32 to Raspberry Pi
 - Simple request-response model
 - Straightforward to implement and debug
-- Resonable decision, as we measured all our actual letterboxes at home to be reachable by our home-wifi. 
+- Reasonable decision, as we measured all our actual letterboxes at home to be reachable by our home-wifi. 
 
 2) Advanced MQTT Implementation
 - Publish-subscribe model with Mosquitto broker
@@ -71,19 +71,23 @@ Advantages of the MQTT aproach are:
 - Cleaner separation of concerns in the codebase
 
 ### Compute Distribution
-We designed a hybrid edge-server compute architecture:
-### ESP32 Edge Processing:
-- Sensor data collection and filtering
-- Mail presence detection algorithms
-- Basic data processing and formatting
-- State tracking (mail count, baseline measurements)
-### Raspberry Pi Server Processing:
-- Data storage and persistence
-- Web interface hosting
-- Notification management
-- Historical data analysis
 
-This distribution enabled real-time mail detection at the edge while offloading more resource-intensive operations to the Raspberry Pi.
+In the updated Smart Letterbox v2 architecture, we adopted a more centralized processing model while maintaining low-latency edge operations.
+
+### ESP32 Edge Processing:
+- Periodic sensor readings (distance and battery voltage)
+- Raw data transmission via MQTT (every 10 seconds)
+- Designed for periodic operation with future support for deep sleep to improve efficiency
+- Minimal onboard logic to maximize power efficiency
+
+### Raspberry Pi Server Processing:
+- Centralized data processing and threshold evaluation (e.g. >5mm alerts)
+- Mail presence detection and battery trend analysis
+- Web interface with real-time graphs and historical views
+- Notification management (e.g. Techulus Push API)
+- Data persistence and logging for future analysis
+
+This revised compute distribution shifts decision-making and visualization to the server side, enabling more sophisticated analysis while keeping the sensor node lightweight and power-efficient.
 
 
 ## Trade-Offs
@@ -99,12 +103,12 @@ Throughout our design process, we navigated several significant trade-offs:
 - Multiple sensor readings improved accuracy but consumed more power
 - We balanced this by taking clustered readings (3 measurements in quick succession) at reasonable intervals
 
-### HTTP extendet to MQTT:
+### HTTP extended to MQTT:
 - MQTT added complexity in setup (requiring broker configuration)
 - However, it provided significant benefits in efficiency and reliability
 - Provides a solution which is more typically used in IoT offering benefits for constrained devices
 
-### Notification Mechanisms (Thrid-party vs open source solution):
+### Notification Mechanisms (Third-party vs open source solution):
 - We selected Techulus Push over email or SMS notifications
 - This simplified implementation but created a dependency on a third-party service
 - The trade-off prioritized development speed and user experience over complete autonomy
@@ -124,6 +128,7 @@ ESP32 firmware: letterbox_ultrasound_mqtt.ino
 Raspberry Pi server: raspberry_pi_mqtt_server.py
 Web interface: Automatically generated by the server script
 
+MQTT System v2: letterbox_ultrasound_mqtt_v2.ino and raspberry_pi_mqtt_server_v2.py
 
 Construction Details:
 
@@ -216,6 +221,9 @@ Our evaluation testing revealed the specific performance characteristics of the 
 - Automatic fallback to Access Point mode ensured continuous operation
 - Web interface accessible from any device on the local network
 - Push notifications delivered with less than 5-second latency
+- Version 2 introduced battery-level tracking and improved message stability with raw MQTT streaming and visual alert indicators.
+
+The system now also monitors battery voltage and estimates remaining runtime.
 
 ### Key System Features:
 
@@ -244,12 +252,12 @@ Our modular and extensible design provides multiple pathways for future enhancem
 3) LoRa Network Integration:
 - Implementing LoRa (Long Range) network connectivity to replace or complement WiFi for communication in areas with poor or no WiFi coverage.
 - LoRa offers low-power, long-range communication, ideal for IoT devices like the Smart Letterbox.
-- This integration would extend the system's range, enabling smart mailboxes in remote or rural areas where WiFi might not be readily available.
+- This integration would extend the system's range, enabling smart letterboxed in remote or rural areas where WiFi might not be readily available.
 
 4) Power Optimizations:
 - Implementation of deep sleep modes or duty-cycles for extended battery life
 - Solar power integration for self-sustaining operation
-- Adaptive measurement frequency based on delivery patterns rcognized by either tinyAI on ESP32 or EdgeAI on RasperyPI backend
+- Adaptive measurement frequency based on delivery patterns recognized by either tinyAI on ESP32 or EdgeAI on RasperyPI backend
 
 
 ## TL;DR
